@@ -21,6 +21,14 @@ return [
         'scheme' => 'https',
     ],
 
+    'shopify' => [
+        'api_key' => env('SHOPIFY_CLIENT_ID'),
+        'client_secret' => env('SHOPIFY_CLIENT_SECRET'),
+        'scopes' => env('SHOPIFY_SCOPES'),
+        'app_id' => env('SHOPIFY_APP_ID'),
+        'host' => env('APP_URL'),
+    ],
+
     'postmark' => [
         'token' => env('POSTMARK_TOKEN'),
     ],
