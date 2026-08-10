@@ -2,6 +2,8 @@ import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import react from '@vitejs/plugin-react';
 
+const isLocal = process.env.APP_ENV === 'DEV';
+
 export default defineConfig({
     plugins: [
         laravel({
@@ -11,7 +13,7 @@ export default defineConfig({
         react(),
     ],
 
-    server: {
+    ...(isLocal && {server: {
         host: 'videocrat.loc',
         port: 5173,
 
@@ -23,5 +25,5 @@ export default defineConfig({
             host: 'videocrat.loc',
             port: 5173,
         },
-    },
+    }, })
 });
