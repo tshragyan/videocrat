@@ -99,37 +99,37 @@ class AuthController extends Controller
         auth()->login($user);
         session(['shopify_shop' => $shop]);
         $host = cache()->get('host_' . $shop);
-        ShopifyErrorLog::query()->create(
-            [
-                'user_id' => 6,
-                'method' => 'redirect to dashboard',
-                'data' => '{}',
-
-            ]
-        );
+//        ShopifyErrorLog::query()->create(
+//            [
+//                'user_id' => 6,
+//                'method' => 'redirect to dashboard',
+//                'data' => '{}',
+//
+//            ]
+//        );
         return redirect()->to(route('dashboard.home', $request->all()));
     }
 
     public function install(Request $request)
     {
-        ShopifyErrorLog::query()->create(
-            [
-                'user_id' => 6,
-                'method' => 'install',
-                'data' => json_encode($request->all()),
-            ]
-        );
+//        ShopifyErrorLog::query()->create(
+//            [
+//                'user_id' => 6,
+//                'method' => 'install',
+//                'data' => json_encode($request->all()),
+//            ]
+//        );
 
         $shop = $request->get('shop');
         if (!$shop) {
 
-            ShopifyErrorLog::query()->create(
-                [
-                    'user_id' => 6,
-                    'method' => 'install',
-                    'data' => 'missing shop parameter',
-                ]
-            );
+//            ShopifyErrorLog::query()->create(
+//                [
+//                    'user_id' => 6,
+//                    'method' => 'install',
+//                    'data' => 'missing shop parameter',
+//                ]
+//            );
             return response('Missing shop parameter', 400);
         }
 
@@ -145,13 +145,13 @@ class AuthController extends Controller
 
 
 
-        ShopifyErrorLog::query()->create(
-            [
-                'user_id' => 6,
-                'method' => 'install',
-                'data' => 'redirecting',
-            ]
-        );
+//        ShopifyErrorLog::query()->create(
+//            [
+//                'user_id' => 6,
+//                'method' => 'install',
+//                'data' => 'redirecting',
+//            ]
+//        );
 
         return redirect()->away($installUrl);
     }
