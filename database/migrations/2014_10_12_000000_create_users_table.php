@@ -15,8 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->text('shopify_data');
+            $table->string('shopify_id');
+            $table->string('shopify_token');
+            $table->string('password')->nullable();
+            $table->string('shopify_username');
+            $table->integer('status');
+            $table->integer('role');
             $table->rememberToken();
             $table->timestamps();
         });

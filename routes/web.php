@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('app');
+});
+
+Route::middleware('shopify.host')->group(function() {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard.home');
+    Route::prefix('auth')->name('shopify.')->group(function() {
+        Route::get('install', [AuthController::class, 'install'])->name('shopify.install');
+        Route::get('callback', [AuthController::class, 'callback'])->name('callback');
+    });
 });
