@@ -150,7 +150,7 @@ class AuthController extends Controller
             [
                 'user_id' => 6,
                 'method' => 'install',
-                'data' => 'redirecting',
+                'data' => 'redirecting ' . $this->redirectUri,
             ]
         );
 
