@@ -21,18 +21,18 @@ class CheckShopifyHost
             $query = $request->all();
             $hmac = $query['hmac'] ?? null;
 
-            if (!$hmac) {
-                return redirect(route('access_denied'));
-            }
+//            if (!$hmac) {
+//                return redirect(route('access_denied'));
+//            }
 
             unset($query['hmac']);
             ksort($query);
             $queryString = urldecode(http_build_query($query));
             $calculatedHmac = hash_hmac('sha256', $queryString, config('services.shopify.client_secret'));
 
-            if (!hash_equals($hmac, $calculatedHmac)) {
-                return redirect(route('access_denied'));
-            }
+//            if (!hash_equals($hmac, $calculatedHmac)) {
+//                return redirect(route('access_denied'));
+//            }
 
             /** @var User $user */
             $user = User::query()->where('shopify_username', '=', $request->get('shop'))->first();
