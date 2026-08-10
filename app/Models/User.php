@@ -3,7 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use App\Http\Services\ShopifyService;
+use App\Services\ShopifyService;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -73,5 +73,14 @@ class User extends Authenticatable
         }
 
         return $this->shopify_username;
+    }
+
+    public function getService(): ShopifyService
+    {
+        if (!$this->service) {
+            $this->service = new ShopifyService($this);
+        }
+
+        return $this->service;
     }
 }
