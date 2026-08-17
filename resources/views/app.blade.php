@@ -18,5 +18,6 @@
 
 <body>
 <div id="app"></div>
+<script src="https://cdn.shopify.com/shopifycloud/app-bridge.js"></script>
 </body>
 </html>
