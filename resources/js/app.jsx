@@ -1,7 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { AppProvider, Page, Card, Text } from '@shopify/polaris';
-import { AppProvider as PolarisRouter } from '@shopify/shopify-app-react-router/react';
 
 import '@shopify/polaris/build/esm/styles.css';
 function App() {
