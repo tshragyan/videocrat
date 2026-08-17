@@ -1,0 +1,66 @@
+<div
+  class="videocrat-videos"
+  data-product-id="{{ product.id }}"
+>
+  <h2 class="videocrat-videos__title">
+    {{ block.settings.heading }}
+  </h2>
+
+  {% if block.settings.video_url != blank %}
+    <div class="videocrat-videos__item">
+      <video
+        class="videocrat-videos__player"
+        controls
+        playsinline
+        preload="metadata"
+      >
+        <source
+          src="{{ block.settings.video_url }}"
+          type="video/mp4"
+        >
+      </video>
+    </div>
+  {% endif %}
+</div>
+
+<style>
+  .videocrat-videos {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .videocrat-videos__title {
+    margin-bottom: 16px;
+  }
+
+  .videocrat-videos__item {
+    width: 100%;
+  }
+
+  .videocrat-videos__player {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Videocrat Videos",
+  "target": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Videos"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL"
+    }
+  ]
+}
+{% endschema %}
