@@ -23,6 +23,7 @@ import Videos from './pages/Videos';
 import Settings from './pages/Settings';
 
 function App() {
+    console.log(window.location.href)
     return (
         <AppProvider i18n={{}}>
             <BrowserRouter>
