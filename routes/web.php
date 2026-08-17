@@ -21,6 +21,7 @@ Route::middleware('shopify.host')->group(function() {
         Route::get('install', [AuthController::class, 'install'])->name('shopify.install');
         Route::get('callback', [AuthController::class, 'callback'])->name('callback');
     });
-    Route::get('/app/{any?}', [DashboardController::class, 'index'])
-        ->where('any', '.*');
+    Route::get('/app/settings', [DashboardController::class, 'index']);
+    Route::get('/app/videos', [DashboardController::class, 'index']);
+    Route::get('/app/', [DashboardController::class, 'index']);
 });

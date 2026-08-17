@@ -31,7 +31,7 @@ function App() {
                         <Route index element={<Home />} />
                         <Route path="videos" element={<Videos />} />
                         <Route path="settings" element={<Settings />} />
-                        <Route path="*" element={<Navigate to="/" replace />} />
+                        <Route path="*" element={<Navigate to="/app" replace />} />
                     </Route>
                 </Routes>
             </BrowserRouter>
