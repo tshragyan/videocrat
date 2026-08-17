@@ -22,5 +22,5 @@ Route::middleware('shopify.host')->group(function() {
         Route::get('callback', [AuthController::class, 'callback'])->name('callback');
     });
 
-    Route::get("app/*", [DashboardController::class, 'index']);
+    Route::get("/app/*", [DashboardController::class, 'index']);
 });
