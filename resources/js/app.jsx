@@ -29,9 +29,9 @@ function App() {
                 <Routes>
                     <Route path="/app" element={<AppLayout />}>
                         <Route index element={<Home />} />
-                        <Route path="/videos" element={<Videos />} />
-                        <Route path="/settings" element={<Settings />} />
-                        <Route path="/*" element={<Navigate to="/app" replace />} />
+                        <Route path="videos" element={<Videos />} />
+                        <Route path="settings" element={<Settings />} />
+                        <Route path="*" element={<Navigate to="/app" replace />} />
                     </Route>
                 </Routes>
             </BrowserRouter>
