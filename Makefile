@@ -2,6 +2,6 @@
 
 deploy:
     	set -e; \
-    	git pull origin main; \
+    	git pull origin master; \
     	npm ci; \
     	npm run build; \

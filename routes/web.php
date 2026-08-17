@@ -23,6 +23,6 @@ Route::middleware('shopify.host')->group(function() {
     });
 });
 
-Route::get('app/settings', [DashboardController::class, 'index']);
-Route::get('app/videos', [DashboardController::class, 'index']);
-Route::get('app/', [DashboardController::class, 'index']);
+
+Route::get('/app/{any?}', [DashboardController::class, 'index'])
+    ->where('any', '.*');
