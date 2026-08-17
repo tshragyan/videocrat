@@ -7,7 +7,6 @@ function AppLayout() {
             <s-app-nav>
                 <a href="/app">Home</a>
                 <a href="/app/videos">Videos</a>
-                <a href="/app/products">Products</a>
                 <a href="/app/settings">Settings</a>
             </s-app-nav>
 
