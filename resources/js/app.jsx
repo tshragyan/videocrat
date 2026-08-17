@@ -27,10 +27,10 @@ function App() {
         <AppProvider i18n={{}}>
             <BrowserRouter>
                 <Routes>
-                    <Route path="/app" element={<AppLayout />}>
+                    <Route path="/" element={<AppLayout />}>
                         <Route index element={<Home />} />
-                        <Route path="videos" element={<Videos />} />
-                        <Route path="settings" element={<Settings />} />
+                        <Route path="app/videos" element={<Videos />} />
+                        <Route path="app/settings" element={<Settings />} />
                         <Route path="*" element={<Navigate to="/app" replace />} />
                     </Route>
                 </Routes>

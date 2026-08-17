@@ -18,6 +18,8 @@
 
 <body>
 <div id="app"></div>
-<script src="https://cdn.shopify.com/shopifycloud/app-bridge.js"></script>
+@if (!app()->environment('local'))
+    <script src="https://cdn.shopify.com/shopifycloud/app-bridge.js"></script>
+@endif
 </body>
 </html>
