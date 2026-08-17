@@ -1,24 +1,40 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { AppProvider, Page, Card, Text } from '@shopify/polaris';
+import {
+    AppProvider,
+    Page,
+    Card,
+    Text,
+} from '@shopify/polaris';
+
+import {
+    BrowserRouter,
+    Routes,
+    Route,
+    Navigate,
+} from 'react-router-dom';
 
 import '@shopify/polaris/build/esm/styles.css';
+
+import AppLayout from './layouts/AppLayout';
+
+import Home from './pages/Home';
+import Videos from './pages/Videos';
+import Settings from './pages/Settings';
+
 function App() {
     return (
         <AppProvider i18n={{}}>
-            <s-app-nav>
-                <a href="/app">Home</a>
-                <a href="/app/videos">Videos</a>
-                <a href="/app/products">Products</a>
-                <a href="/app/settings">Settings</a>
-            </s-app-nav>
-            <Page title="Videocrat">
-                <Card>
-                    <Text as="p" variant="bodyMd">
-                        Shopify Embedded App работает.
-                    </Text>
-                </Card>
-            </Page>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/app" element={<AppLayout />}>
+                        <Route index element={<Home />} />
+                        <Route path="videos" element={<Videos />} />
+                        <Route path="settings" element={<Settings />} />
+                        <Route path="*" element={<Navigate to="/" replace />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
         </AppProvider>
     );
 }
