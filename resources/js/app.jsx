@@ -28,10 +28,10 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<AppLayout />}>
-                        <Route index element={<Home />} />
+                        <Route path="app/" element={<Home />} />
                         <Route path="app/videos" element={<Videos />} />
                         <Route path="app/settings" element={<Settings />} />
-                        <Route path="app" element={<Navigate to="/app" replace />} />
+                        <Route path="*" element={<Navigate to="/app" replace />} />
                     </Route>
 
                 </Routes>
