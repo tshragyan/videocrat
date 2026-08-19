@@ -1,6 +1,6 @@
 import InstagramModal from './InstagramModal';
 import TikTokModal from './TikTokModal';
-import PcModal from './PcModal';
+import PcModal from './PCModal';
 export const INSTAGRAM_KEY = 'instagram'
 export const TIK_TOK_KEY = 'tiktok'
 export const PC_KEY = 'pc'
