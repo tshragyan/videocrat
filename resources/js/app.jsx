@@ -21,11 +21,13 @@ import AppLayout from './layouts/AppLayout';
 import Home from './pages/Home';
 import Videos from './pages/Videos';
 import Settings from './pages/Settings';
+import Header from "./components/Header";
 
 function App() {
     console.log(window.location.href)
     return (
         <AppProvider i18n={{}}>
+            <Header/>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<AppLayout />}>
